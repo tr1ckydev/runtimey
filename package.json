@@ -1,0 +1,30 @@
+{
+  "name": "runtimey",
+  "version": "0.0.1",
+  "description": "Easily detect which JavaScript runtime is being used.",
+  "main": "index.js",
+  "type": "module",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tr1ckydev/runtimey.git"
+  },
+  "keywords": [
+    "bun",
+    "deno",
+    "node",
+    "runtime",
+    "detect"
+  ],
+  "author": "tr1ckydev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tr1ckydev/runtimey/issues"
+  },
+  "homepage": "https://github.com/tr1ckydev/runtimey#readme"
+}
