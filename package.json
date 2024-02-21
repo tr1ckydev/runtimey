@@ -1,6 +1,6 @@
 {
   "name": "runtimey",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Easily detect which JavaScript runtime is being used.",
   "main": "dist/index.js",
   "type": "module",
