@@ -1,7 +1,7 @@
 # runtimey
-Easily detect which JavaScript runtime is being used. [Bun](https://bun.sh/), [Deno](https://deno.com/runtime) or [NodeJS](https://nodejs.org/).
+Easily detect which JavaScript runtime is being used. [Bun](https://bun.sh/), [Deno](https://deno.com/runtime), [Node.JS](https://nodejs.org/) or browser.
 
-Useful for packages or scripts to customize functionality of their code depending on the runtime being used.
+Useful for packages or scripts to customize functionality of their code depending on the runtime being executed.
 
 
 
@@ -10,8 +10,8 @@ Useful for packages or scripts to customize functionality of their code dependin
 *index.js*
 
 ```javascript
-import { getCurrentRuntime } from "runtimey";
-console.log(getCurrentRuntime());
+import { currentRuntime } from "runtimey";
+console.log(currentRuntime);
 ```
 
 *shell*
@@ -27,39 +27,39 @@ node
 
 ## Documentation
 
-- ### `isBun()`
+- ### `isBun`
 
-  Returns `true` if the Bun runtime is being used.
+  `true` if the Bun runtime is being used.
 
-- ### `isDeno()`
+- ### `isDeno`
 
-  Returns `true` if the Deno runtime is being used.
+  `true` if the Deno runtime is being used.
 
-- ### `isNode()`
+- ### `isNode`
 
-  Returns `true` if the NodeJS runtime is being used.
+  `true` if the Node.JS runtime is being used.
 
-- ### `getCurrentRuntime()`: `"bun"` | `"deno"` | `"node"`
+- ### `isBrowser`
 
-  Returns the name of the current runtime being used.
+  `true` if running inside a browser.
 
-- ### `getCurrentRuntimeVersion()`
+- ### `currentRuntime`: `"bun"` | `"deno"` | `"node"` | `"browser"` | `"unknown"`
 
-  Returns the version of the current runtime being used.
+  The name of the current runtime being used.
 
-- ### `dynamicValue<T>({ bun: T, deno: T, node: T })`: `T`
+- ### `runtimeValue({ bun, deno, node, browser, default })`
 
   Returns the value according to the runtime being used.
   
   *index.js*
   
   ```javascript
-  import { dynamicValue } from "runtimey";
-  const val = dynamicValue({ bun: "RUNTIME_BUN", deno: "RUNTIME_DENO", node: "RUNTIME_NODE" });
-  console.log("Current runtime: " + val);
+  import { runtimeValue } from "runtimey";
+  const val = runtimeValue({ bun: "RUNTIME_BUN", deno: "RUNTIME_DENO", node: "RUNTIME_NODE" });
+  console.log("Current runtime:", val);
   ```
   
-  shell
+  *shell*
   
   ```bash
   $ bun index.js && deno run index.js && node index.js
@@ -68,7 +68,11 @@ node
   Current runtime: RUNTIME_NODE
   ```
   
-  
+- ### `isServiceWorker`
+
+  `true` if running in a worker environment.
+
+
 
 ## License
 
